@@ -1,0 +1,9 @@
+#!/bin/bash
+
+find tests/* -type f -name '*.*' -print0 |
+
+while tests= read -r -d '' file; do
+    printf "\n:: $file :: \n"
+    node -r @babel/register -r @babel/polyfill "$file" | node_modules/.bin/tap-nirvana
+done
+

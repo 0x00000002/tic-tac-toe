@@ -1,0 +1,90 @@
+{
+  "name": "TicTacToe",
+  "description": "Tic Tac Toe with React, Redux, and Saga.",
+  "main": "index.js",
+  "version": "0.1.0",
+  "author": "Alex Tikonoff",
+  "homepage": "https://tikonoff.github.io/tic-tac-toe",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tikonoff/tic-tac-toe.git"
+  },
+  "license": "MIT",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.9.2",
+    "@material-ui/icons": "^3.0.2",
+    "ramda": "0.26.1",
+    "react": "16.8.4",
+    "react-dom": "16.8.4",
+    "react-redux": "6.0.1",
+    "react-scripts": "^2.1.8",
+    "redux": "4.0.1",
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "2.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "blue-tape": "^1.0.0",
+    "enzyme": "latest",
+    "enzyme-adapter-react-16": "latest",
+    "husky": "1.3.1",
+    "include-all": "^4.0.3",
+    "lint-staged": "latest",
+    "nyc": "^13.3.0",
+    "redux-immutable-state-invariant": "latest",
+    "redux-mock-store": "1.5.3",
+    "riteway": "6.0.3",
+    "standard": "latest",
+    "tap-nirvana": "^1.1.0",
+    "tape": "^4.10.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "test:all": "./.runAll",
+    "coverage": "react-scripts test --coverage",
+    "precommit": "CI=true npm run test && lint-staged"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "standard": {
+    "globals": [
+      "describe",
+      "it",
+      "before",
+      "beforeEach",
+      "after",
+      "afterEach",
+      "expect",
+      "jest",
+      "test",
+      "__rewire_reset_all__"
+    ],
+    "parser": "babel-eslint"
+  },
+  "lint-staged": {
+    "linters": {
+      "src/*/**.js": [
+        "git add"
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
+  }
+}
