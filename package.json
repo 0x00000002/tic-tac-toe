@@ -77,14 +77,15 @@
   },
   "lint-staged": {
     "linters": {
-      "src/*/**.js": [
+      "src/**/**.js": [
         "git add"
       ]
     }
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run precommit"
+      "pre-commit": "npm run precommit",
+      "pre-push": "npm run precommit"
     }
   }
 }
