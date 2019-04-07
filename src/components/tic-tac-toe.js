@@ -1,5 +1,5 @@
 import R from 'ramda'
-import produce from "immer"
+import produce from 'immer'
 
 const winPatterns = [
   // rows
@@ -12,7 +12,7 @@ const winPatterns = [
   [false, false, true, false, false, true, false, false, true],
   // diagonals
   [true, false, false, false, true, false, false, false, true],
-  [false, false, true, false, true, false, true, false, false],
+  [false, false, true, false, true, false, true, false, false]
 ]
 
 const checkMove = (state = [], player = 'x') => {
