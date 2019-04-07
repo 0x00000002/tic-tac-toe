@@ -1,5 +1,5 @@
 {
-  "name": "TicTacToe",
+  "name": "tic-tac-toe",
   "description": "Tic Tac Toe with React, Redux, and Saga.",
   "main": "index.js",
   "version": "0.1.0",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
+    "immer": "^2.1.5",
     "ramda": "0.26.1",
     "react": "16.8.4",
     "react-dom": "16.8.4",
