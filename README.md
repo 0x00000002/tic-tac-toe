@@ -10,7 +10,7 @@ Run in terminal:
 
 ```
 git clone git@github.com:tikonoff/tic-tac-toe.git
-cd cart
+cd tic-tac-toe
 npm install
 ```
 
