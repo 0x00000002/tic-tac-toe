@@ -2,13 +2,18 @@ import React from 'react'
 import Header from './Header'
 import Main from './Main'
 
-const defaultGame = { move: 'x', state: [] }  // TODO: Remove it with redux state
+// TODO: Get it from redux
+const ops = { move: {}, checkMove: {} }
+const game = {
+  move: 'x',
+  state: [ '', '', '', '', '', '', '', '', '' ]
+}
 
 const App = () => (
-  <section>
+  <div>
     <Header />
-    <Main game={defaultGame} />
-  </section>
+    <Main game={game} ops={ops} />
+  </div>
 )
 
 export default App
