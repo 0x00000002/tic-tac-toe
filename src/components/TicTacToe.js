@@ -1,21 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-const TicTacToe = (props) => {
-  const { game: { lastMove, state }, ops } = props
-  const { move, checkMove } = ops
-  const [player, setPlayer] = useState(lastMove || 'x')
-
-  const switchPlayer = () => setPlayer(player === 'x' ? 'o' : 'x')
-
-  const nextMove = (idx) => {
-    move(state, player, idx)
-    checkMove()
-    switchPlayer()
-  }
+const TicTacToe = ({ game }) => {
+  const { state, ops: { move } } = game
+  const player = 'x' // TODO: player can choose who to play: X or O
 
   return (
     <section id={'tic-tac-toe'}>
-      { state && state.map((value, idx) => <li onClick={e => nextMove(idx)} key={idx} />) }
+      { state && state.map((value, idx) =>
+        <li onClick={e => move(state, player, idx)} key={idx} />) }
     </section>
   )
 }
