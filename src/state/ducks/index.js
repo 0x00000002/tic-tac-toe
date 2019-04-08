@@ -1,1 +1,1 @@
-export { default as newOperations } from './new'
+export { default as gameOperations } from './game'

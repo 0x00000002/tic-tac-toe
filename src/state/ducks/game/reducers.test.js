@@ -19,13 +19,13 @@ describe('cart reducers', function () {
       expect(newReducer).toEqual({ reducer: 'fake-combined-reducer'})
       expect(createReducer.mock.calls[0][0]).toEqual({})
       expect(Object.keys(createReducer.mock.calls[0][1])).toEqual([
-        'NEW_COMPLETED'
+        'MOVE_COMPLETED'
       ])
     })
 
     it('should support NEW_COMPLETED', function () {
       expect(
-        createReducer.mock.calls[0][1]['NEW_COMPLETED']({}, {
+        createReducer.mock.calls[0][1]['MOVE_COMPLETED']({}, {
           payload: fake.payload
         })
       ).toEqual('fake-payload')

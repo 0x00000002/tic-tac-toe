@@ -27,3 +27,26 @@ h2 {
 header {
   text-align: center;
 }
+
+#game {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+#tic-tac-toe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 510px;
+}
+
+#tic-tac-toe > li {
+  width: 150px;
+  height: 150px;
+  background-color: #eee;
+  list-style: none;
+  margin: 10px;
+  display: flex;
+}

@@ -14,7 +14,7 @@ describe('cart actions', function () {
   describe('clearCart', function () {
     it('should return an NEW_COMPLETE action', function () {
       expect(actions.newOp()).toEqual({
-        type: types.NEW_COMPLETED,
+        type: types.MOVE_COMPLETED,
         payload: emptyPayload
       })
     })

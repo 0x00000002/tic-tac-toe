@@ -1,0 +1,12 @@
+export const NEW_GAME = 'NEW_GAME'
+export const NEW_GAME_COMPLETED = 'NEW_GAME_COMPLETED'
+export const NEW_GAME_FAILED = 'NEW_GAME_FAILED'
+
+export const MOVE = 'MOVE'
+export const MOVE_COMPLETED = 'MOVE_COMPLETED'
+export const MOVE_FAILED = 'MOVE_FAILED'
+
+export const CHECK_MOVE = 'CHECK_MOVE'
+export const CHECK_MOVE_COMPLETED = 'CHECK_MOVE_COMPLETED'
+export const CHECK_MOVE_FAILED = 'CHECK_MOVE_FAILED'
+
