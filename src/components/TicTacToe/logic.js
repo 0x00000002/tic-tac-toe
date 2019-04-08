@@ -1,5 +1,5 @@
 import R from 'ramda'
-import produce from 'immer'
+import produce from 'immer/dist/immer'
 
 const winPatterns = [
   // rows

@@ -1,4 +1,4 @@
-import { checkMove, move } from './tic-tac-toe'
+import { checkMove, move } from './logic'
 import { describe, Try } from 'riteway'
 
 const x = 'x'
