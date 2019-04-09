@@ -5,13 +5,18 @@ import * as types from './types'
 describe('cart actions', function () {
   it('should export functions', function () {
     expect(Object.keys(actions)).toEqual([
-      'loadGame', 'move'
+      'loadGame',
+      'startLoadGame',
+      'loadGameComplete',
+      'playerMoveComplete',
+      'move',
+      'moveChecked'
     ])
   })
 
-  describe('move', function () {
+  describe('playerMoveComplete', function () {
     it('should return an PLAYER_MOVE_COMPLETED action', function () {
-      expect(actions.move(100)).toEqual({
+      expect(actions.playerMoveComplete(100)).toEqual({
         type: types.PLAYER_MOVE_COMPLETED,
         payload: 100
       })
@@ -19,13 +24,24 @@ describe('cart actions', function () {
   })
 
   describe('loadGame', function () {
-    it('should return an LOAD_GAME_COMPLETED action', function () {
-      expect(actions.loadGame()).toEqual({
-        type: types.LOAD_GAME_COMPLETED,
+    it('startLoadGame() should return LOAD_GAME action', function () {
+      expect(actions.startLoadGame()).toEqual({
+        type: types.LOAD_GAME,
         meta: {
           async: true,
           blocking: false
         }
+      })
+    })
+
+    it('loadGameComplete() should return LOAD_GAME_COMPLETED action', function () {
+      expect(actions.loadGameComplete()).toEqual({
+        type: types.LOAD_GAME_COMPLETED,
+        meta: {
+          async: true,
+          blocking: false
+        },
+        payload: [null, null, null, null, null, null, null, null, null]
       })
     })
   })

@@ -8,11 +8,11 @@ export default class App extends Component {
   }
 
   render () {
-    return this.props.game ? (
+    return (
       <div>
         <Header />
         <Main game={this.props.game} move={this.props.move} />
       </div>
-    ) : false
+    )
   }
 }
