@@ -1,3 +1,7 @@
+export const LOAD_GAME = 'LOAD_GAME'
+export const LOAD_GAME_COMPLETED = 'LOAD_GAME_COMPLETED'
+export const LOAD_GAME_FAILED = 'LOAD_GAME_FAILED'
+
 export const NEW_GAME = 'NEW_GAME'
 export const NEW_GAME_COMPLETED = 'NEW_GAME_COMPLETED'
 export const NEW_GAME_FAILED = 'NEW_GAME_FAILED'

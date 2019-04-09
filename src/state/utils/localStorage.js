@@ -1,10 +1,12 @@
 export const emptyState = {
-  newOperations: {}
+  game: {
+    state: Array(9).fill(null)
+  }
 }
 
 export const loadState = () => {
   try {
-    const serializedState = localStorage.getItem('cartState')
+    const serializedState = localStorage.getItem('gameState')
     return serializedState ? JSON.parse(serializedState) : emptyState
   } catch (e) {
     return emptyState
@@ -14,7 +16,7 @@ export const loadState = () => {
 export const saveState = state => {
   try {
     const serializedState = JSON.stringify(state)
-    localStorage.setItem('cartState', serializedState)
+    localStorage.setItem('gameState', serializedState)
   } catch (e) {
     // ignore
   }

@@ -1,13 +1,13 @@
 import { connect } from 'react-redux'
 import App from '../components/App'
-import newOperations from '../state/ducks/game'
+import { gameOperations } from '../state/ducks/game'
 
 export const mapStateToProps = state => ({
-  newState: state.newState
+  game: state.game
 })
-
 export const mapDispatchToProps = {
-  newProp: newOperations.new
+  move: gameOperations.move,
+  loadGame: gameOperations.loadGame
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

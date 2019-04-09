@@ -4,7 +4,11 @@ import Header from './Header'
 import Main from './Main'
 import { shallow } from 'enzyme'
 
-const props = {}
+const props = {
+  game: {
+    state: {}
+  }
+}
 
 describe('components/App', function () {
   let wrapper

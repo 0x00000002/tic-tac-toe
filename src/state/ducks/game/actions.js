@@ -1,7 +1,32 @@
 import * as types from './types'
-import { emptyState } from '../../utils/localStorage'
 
-export const newOp = () => ({
-  type: types.MOVE_COMPLETED,
-  payload: emptyState.newOperations
+export const loadGame = () => ({
+  type: types.LOAD_GAME_COMPLETED,
+  meta: {
+    async: true,
+    blocking: false
+  }
 })
+
+export const move = (idx) => ({
+  type: types.PLAYER_MOVE_COMPLETED,
+  payload: idx
+})
+
+// export const move = (idx) => async dispatch => {
+//   dispatch({
+//     type: types.PLAYER_MOVE,
+//     meta: {
+//       async: true,
+//       blocking: false
+//     }
+//   })
+//
+//   dispatch({
+//     type: types.LOAD_GAME_COMPLETED,
+//     meta: {
+//       async: true
+//     },
+//     payload: newState
+//   })
+// }

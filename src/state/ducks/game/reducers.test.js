@@ -19,6 +19,7 @@ describe('game reducers', function () {
       expect(newReducer).toEqual({ reducer: 'fake-combined-reducer' })
       expect(createReducer.mock.calls[0][0]).toEqual({})
       expect(Object.keys(createReducer.mock.calls[0][1])).toEqual([
+        'LOAD_GAME_COMPLETED',
         'NEW_GAME_COMPLETED',
         'PLAYER_MOVE_COMPLETED',
         'AI_MOVE_COMPLETED',
@@ -31,7 +32,7 @@ describe('game reducers', function () {
         createReducer.mock.calls[0][1]['PLAYER_MOVE_COMPLETED']({}, {
           payload: fake.payload
         })
-      ).toEqual('fake-payload')
+      ).toEqual({ 'fake-payload': 'x' })
     })
   })
 })

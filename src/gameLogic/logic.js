@@ -1,4 +1,4 @@
-import R from 'ramda'
+import * as R from 'ramda'
 import produce from 'immer/dist/immer'
 
 const winPatterns = [
@@ -22,7 +22,8 @@ const checkMove = (state = [], player = 'x') => {
   return winPatterns.some(pattern => R.equals(pattern, booleanState))
 }
 
-const move = (state = [], player = 'x', idx = 0) =>
-  produce(state, draftState => { draftState[idx] = state[idx] || player })
+const move = (state = [], player = 'x', idx = 0) => {
+  return produce(state, draftState => { draftState[idx] = state[idx] || player })
+}
 
 export { checkMove, move }
