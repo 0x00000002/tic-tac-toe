@@ -5,9 +5,10 @@ import { gameOperations } from '../state/ducks/game'
 export const mapStateToProps = state => ({
   game: state.game
 })
+
 export const mapDispatchToProps = {
   move: gameOperations.move,
-  loadGame: gameOperations.loadGame
+  newGame: gameOperations.newGame
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

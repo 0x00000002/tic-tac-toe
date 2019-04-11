@@ -5,19 +5,19 @@ import * as types from './types'
 describe('cart actions', function () {
   it('should export functions', function () {
     expect(Object.keys(actions)).toEqual([
-      'loadGame',
+      'newGame',
       'move',
-      'moveAI',
-      'moveChecked',
       'playerMove',
-      'aiMove'
+      'wrongMove',
+      'aiMove',
+      'winner'
     ])
   })
 
-  describe('loadGame', function () {
-    it('startLoadGame() should return LOAD_GAME action', function () {
-      expect(actions.loadGame()).toEqual({
-        type: types.LOAD_GAME_COMPLETED,
+  describe('newGame', function () {
+    it('newGame() should return NEW_GAME action', function () {
+      expect(actions.newGame()).toEqual({
+        type: types.NEW_GAME,
         meta: {
           async: true,
           blocking: false

@@ -3,10 +3,12 @@ import Loading from './Loading'
 import TicTacToe from './TicTacToe'
 
 const Main = ({ game, move }) =>
-  game && game.state && move
-    ? ( <section id={'game'}>
-          <TicTacToe state={game.state} move={move} />
-        </section> )
+  game && game.data && game.data.state && move
+    ? (
+      <section id={'game'}>
+        <TicTacToe state={game.data.state} move={move} />
+      </section>
+    )
     : <Loading />
 
 export default Main

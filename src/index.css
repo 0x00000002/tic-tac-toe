@@ -53,9 +53,12 @@ header {
 }
 
 #tic-tac-toe .x {
-  background-color: greenyellow;
+  background-color: lightcoral;
+  cursor: not-allowed;
 }
 
 #tic-tac-toe .o {
-  background-color: indianred;
+  background-color: cadetblue;
+  cursor: not-allowed;
 }
+

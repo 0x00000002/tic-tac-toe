@@ -1,9 +1,9 @@
 import {
   move,
-  loadGame
+  newGame
 } from './actions'
 
 export {
   move,
-  loadGame
+  newGame
 }

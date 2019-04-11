@@ -5,11 +5,11 @@ import { move, aiMove } from '../../../gameLogic/logic'
 import { emptyState } from '../../utils/localStorage'
 
 export const gameReducer = createReducer({}, {
-  [types.LOAD_GAME]: (state, action) => state,
-  [types.LOAD_GAME_COMPLETED]: (state, action) => emptyState.game.state,
-  [types.PLAYER_MOVE_COMPLETED]: (state, action) => move(state, 'x', action.payload),
-  [types.AI_MOVE_COMPLETED]: (state, action) => aiMove(state, 'o', action.payload),
-  [types.CHECK_MOVE_COMPLETED]: (state, action) => state
+  [types.NEW_GAME]: (state, action) => emptyState.game.data,
+  [types.PLAYER_MOVE]: (state, action) => move(state, action.payload.player, action.payload.idx),
+  [types.AI_MOVE]: (state, action) => aiMove(state),
+  [types.WRONG_MOVE]: (state, action) => state,
+  [types.HAS_WINNER]: (state, action) => action.payload
 })
 
-export default combineReducers({ state: gameReducer })
+export default combineReducers({ data: gameReducer })

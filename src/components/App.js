@@ -4,7 +4,7 @@ import Main from './Main'
 
 export default class App extends Component {
   async componentDidMount () {
-    this.props.loadGame()
+    this.props.newGame()
   }
 
   render () {

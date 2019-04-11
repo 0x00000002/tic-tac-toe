@@ -5,8 +5,9 @@ import Main from './Main'
 import { shallow } from 'enzyme'
 
 const props = {
-  game: {
-    state: {}
+  data: {
+    state: {},
+    winner: null
   }
 }
 

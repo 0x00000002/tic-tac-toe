@@ -3,6 +3,7 @@
 import { createReducer } from '../../utils'
 import newReducer from './reducers'
 import fake from '../../../helpers/testing'
+import { emptyState } from '../../utils/localStorage'
 
 jest.mock('redux', () => ({
   combineReducers: jest
@@ -19,20 +20,20 @@ describe('game reducers', function () {
       expect(newReducer).toEqual({ reducer: 'fake-combined-reducer' })
       expect(createReducer.mock.calls[0][0]).toEqual({})
       expect(Object.keys(createReducer.mock.calls[0][1])).toEqual([
-        'LOAD_GAME',
-        'LOAD_GAME_COMPLETED',
-        'PLAYER_MOVE_COMPLETED',
-        'AI_MOVE_COMPLETED',
-        'CHECK_MOVE_COMPLETED'
+        'NEW_GAME',
+        'PLAYER_MOVE',
+        'AI_MOVE',
+        'WRONG_MOVE',
+        'HAS_WINNER'
       ])
     })
 
-    it('should support PLAYER_MOVE_COMPLETED', function () {
+    it('should support NEW_GAME', function () {
       expect(
-        createReducer.mock.calls[0][1]['PLAYER_MOVE_COMPLETED']({}, {
+        createReducer.mock.calls[0][1]['NEW_GAME']({}, {
           payload: fake.payload
         })
-      ).toEqual({ 'fake-payload': 'x' })
+      ).toEqual(emptyState.game.data)
     })
   })
 })

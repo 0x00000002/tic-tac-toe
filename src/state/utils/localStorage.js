@@ -1,6 +1,9 @@
 export const emptyState = {
   game: {
-    state: Array(9).fill(null)
+    data: {
+      winner: null,
+      state: Array(9).fill(null)
+    }
   }
 }
 
