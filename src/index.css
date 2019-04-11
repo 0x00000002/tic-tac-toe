@@ -53,5 +53,9 @@ header {
 }
 
 #tic-tac-toe .x {
-  background-color: #234;
+  background-color: greenyellow;
+}
+
+#tic-tac-toe .o {
+  background-color: indianred;
 }

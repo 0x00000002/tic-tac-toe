@@ -21,7 +21,6 @@ describe('game reducers', function () {
       expect(Object.keys(createReducer.mock.calls[0][1])).toEqual([
         'LOAD_GAME',
         'LOAD_GAME_COMPLETED',
-        'NEW_GAME_COMPLETED',
         'PLAYER_MOVE_COMPLETED',
         'AI_MOVE_COMPLETED',
         'CHECK_MOVE_COMPLETED'
