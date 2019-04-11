@@ -31,7 +31,8 @@ header {
 #game {
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin: 50px 0;
 }
 
@@ -61,4 +62,16 @@ header {
   background-color: cadetblue;
   cursor: not-allowed;
 }
+#game .restart {
+  padding: 15px 42px;
+  border: none;
+  background-color: #eee;
+  margin: 50px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
 
+#game .restart:hover {
+  background-color: #ddd;
+  transition-duration: 0.5s;
+}

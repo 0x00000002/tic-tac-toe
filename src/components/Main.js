@@ -1,14 +1,19 @@
 import React from 'react'
 import Loading from './Loading'
 import TicTacToe from './TicTacToe'
+import Result from './Result'
 
-const Main = ({ game, move }) =>
-  game && game.data && game.data.state && move
+const Main = (props) => {
+  const { game: { data }, move, newGame } = props.control
+  return data && move && newGame
     ? (
       <section id={'game'}>
-        <TicTacToe state={game.data.state} move={move} />
+        <TicTacToe state={data.state} move={move} />
+        <button onClick={e => newGame()} className={'restart'}>Restart</button>
+        <Result winner={data.winner} />
       </section>
     )
     : <Loading />
+}
 
 export default Main

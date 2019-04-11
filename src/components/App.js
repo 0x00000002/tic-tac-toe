@@ -11,7 +11,7 @@ export default class App extends Component {
     return (
       <div>
         <Header />
-        <Main game={this.props.game} move={this.props.move} />
+        <Main control={this.props} />
       </div>
     )
   }
