@@ -1,11 +1,12 @@
 import { checkMove, move } from './logic'
 import { describe, Try } from 'riteway'
 
+
 const x = 'x'
 const o = 'o'
 const winnerX = [x, null, null, null, x, null, null, null, x]
-const winnerO = [ null, o, null, null, o, null, null, o, null]
-const noWinner = [ null, null, null, null, o, null, null, o, null]
+const winnerO = [null, o, null, null, o, null, null, o, null]
+const noWinner = [null, o, null, null, null, null, null, o, null]
 
 describe('checkMove()', async assert => {
   assert({
@@ -93,40 +94,39 @@ describe('checkMove()', async assert => {
   })
 })
 
-
 describe('move()', async assert => {
   assert({
     given: 'new move',
     should: 'return new state',
-    actual: move(noWinner, 'x', 0),
-    expected: [ 'x', null, null, null, 'o', null, null, 'o', null ]
+    actual: move({ state: noWinner }, x, 0).state,
+    expected: [ x, o, null, null, null, null, null, o, null ]
   })
 
   assert({
     given: 'no state',
     should: 'create new state',
-    actual: move([], 'x', 0),
+    actual: move({ state: [] }, 'x', 0).state,
     expected: [ 'x' ]
   })
 
   assert({
     given: 'no player',
     should: 'return new state from player X',
-    actual: move(noWinner),
-    expected: [ 'x', null, null, null, 'o', null, null, 'o', null ]
+    actual: move({ state: noWinner }).state,
+    expected: [ null, o, null, null, 'x', null, null, 'o', null ]
   })
 
   assert({
     given: 'no index',
-    should: 'return new state from player X',
-    actual: move(noWinner, 'o'),
-    expected: [ 'o', null, null, null, 'o', null, null, 'o', null ]
+    should: 'return new state from player O',
+    actual: move({ state: noWinner }, o).state,
+    expected: [ null, o, null, null, 'o', null, null, 'o', null ]
   })
 
   assert({
     given: 'move to existing index',
     should: 'return old state',
-    actual: move(noWinner, 'x', 4),
-    expected: [ null, null, null, null, 'o', null, null, 'o', null ]
+    actual: move({ state: [null, o, null, null, null, null, null, o, null] }, x, 1).state,
+    expected: [null, o, null, null, null, null, null, o, null]
   })
 })
