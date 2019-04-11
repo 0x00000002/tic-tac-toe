@@ -8,7 +8,7 @@ const Main = (props) => {
   return data && move && newGame
     ? (
       <section id={'game'}>
-        <TicTacToe state={data.state} move={move} />
+        <TicTacToe state={data.state} move={data.winner ? newGame : move} />
         <button onClick={e => newGame()} className={'restart'}>Restart</button>
         <Result winner={data.winner} />
       </section>
