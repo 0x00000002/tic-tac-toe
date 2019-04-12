@@ -12,8 +12,6 @@ afterEach(() => {
   process.env = OLD_ENV
 })
 
-console.log(process.env.NODE_ENV)
-
 describe('settings/index', function () {
   it('development env', async function () {
     process.env.NODE_ENV = 'development'
