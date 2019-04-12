@@ -22,7 +22,7 @@ describe('containers/App', function () {
   describe('mapDispatchToProps', function () {
     it('should return a remapped dispatches', function () {
       expect(Object.keys(mapDispatchToProps)).toEqual([
-        'newProp'
+        'move', 'newGame'
       ])
     })
   })

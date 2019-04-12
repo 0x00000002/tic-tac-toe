@@ -1,8 +1,8 @@
 {
-  "name": "TicTacToe",
-  "description": "Tic Tac Toe with React, Redux, and Saga.",
+  "name": "tic-tac-toe",
+  "description": "Tic Tac Toe with React, Redux, Thunks / Sagas",
   "main": "index.js",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Alex Tikonoff",
   "homepage": "https://tikonoff.github.io/tic-tac-toe",
   "repository": {
@@ -16,6 +16,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
+    "immer": "^2.1.5",
     "ramda": "0.26.1",
     "react": "16.8.4",
     "react-dom": "16.8.4",
@@ -35,6 +36,7 @@
     "blue-tape": "^1.0.0",
     "enzyme": "latest",
     "enzyme-adapter-react-16": "latest",
+    "expect": "^24.7.1",
     "husky": "^1.3.1",
     "include-all": "^4.0.3",
     "lint-staged": "latest",

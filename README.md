@@ -1,13 +1,14 @@
 
-# Tic Tac Toe with Redux & Saga
+# Tic Tac Toe
+
+with React, Redux, Saga and others.
 
 
-Shopping cart with React and Redux.
+<br><!-- ************************** -->
 
 ### Installation 
 
 Run in terminal:
-
 ```
 git clone git@github.com:tikonoff/tic-tac-toe.git
 cd tic-tac-toe
@@ -15,8 +16,13 @@ npm install
 ```
 
 
-### Usage
 
+
+<br><!-- ************************** -->
+
+### Running
+
+Run in terminal:
 ```
 npm run start
 ```
@@ -24,9 +30,35 @@ npm run start
 Wait few seconds while server starting up.
 
 Open your browser and go to the `http://localhost:3000`
-<br>Use it as you normally do on the web :) 
+<br>Use it as you normally do on the web.
 
 
-#### Redux states/operations logs
 
-To see what's going on under the hood, open browser's developer console (most likely Ctrl-J / Cmd-J for Mac).
+
+
+<br><!-- ************************** -->
+
+### Issues
+
+All known issues reported in [Issues](https://github.com/tikonoff/tic-tac-toe/issues). 
+
+
+
+
+
+
+<br><!-- ************************** -->
+
+### Development
+
+Project progress could be tracked here: [Project](https://github.com/tikonoff/tic-tac-toe/projects)
+
+
+
+
+
+<br><!-- ************************** -->
+
+### Demo
+
+[https://tikonoff.github.io/tic-tac-toe](https://tikonoff.github.io/tic-tac-toe) – WIP, not deployed yet.

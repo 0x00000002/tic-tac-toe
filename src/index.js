@@ -7,13 +7,10 @@ import configureStore from './state/store'
 import errors from './helpers/errorHandling'
 import ErrorBoundary from './helpers/errorBoundary'
 import * as serviceWorker from './helpers/serviceWorker'
-import { saveState, loadState, clearState } from './state/utils/localStorage'
-
-clearState()
+import { saveState, loadState } from './state/utils/localStorage'
 
 const persistedState = loadState()
 const reduxStore = configureStore(persistedState)
-
 reduxStore.subscribe(() => saveState(reduxStore.getState()))
 
 ReactDOM.render(

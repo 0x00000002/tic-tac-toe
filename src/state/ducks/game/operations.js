@@ -1,7 +1,9 @@
 import {
-  newOp
+  move,
+  newGame
 } from './actions'
 
 export {
-  newOp
+  move,
+  newGame
 }

@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Header from './Header'
 import Main from './Main'
 
-const App = () => (
-  <section>
-    <Header />
-    <Main />
-  </section>
-)
+export default class App extends Component {
+  async componentDidMount () {
+    this.props.newGame()
+  }
 
-export default App
+  render () {
+    return (
+      <div>
+        <Header />
+        <Main control={this.props} />
+      </div>
+    )
+  }
+}

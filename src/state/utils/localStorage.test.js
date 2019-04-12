@@ -30,15 +30,23 @@ global.localStorage = new LocalStorageMock()
 describe('Local storage functions', function () {
   it('should load state (empty)', () => {
     const loadingSpy = jest.spyOn(LS, 'loadState')
-    localStorage.setItem('cartState', 'asdf')
+    localStorage.setItem('gameState', '')
     const loaded = LS.loadState()
     expect(loadingSpy).toHaveBeenCalledTimes(1)
     expect(loaded).toEqual(LS.emptyState)
   })
 
+  it('should load state (non empty)', () => {
+    const loadingSpy = jest.spyOn(LS, 'loadState')
+    localStorage.setItem('gameState', '12345')
+    const loaded = LS.loadState()
+    expect(loadingSpy).toHaveBeenCalledTimes(2)
+    expect(loaded).toEqual(12345)
+  })
+
   it('should save state (empty)', () => {
     const savingSpy = jest.spyOn(LS, 'saveState')
-    localStorage.setItem('cartState', 'asdf')
+    localStorage.setItem('gameState', 'asdf')
     LS.saveState('fake-save')
     expect(savingSpy).toHaveBeenCalledTimes(1)
     expect(savingSpy.mock.calls[0][0]).toEqual('fake-save')
