@@ -1,8 +1,8 @@
 {
   "name": "tic-tac-toe",
-  "description": "Tic Tac Toe with React, Redux, and Saga.",
+  "description": "Tic Tac Toe with React, Redux, Thunks / Sagas",
   "main": "index.js",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Alex Tikonoff",
   "homepage": "https://tikonoff.github.io/tic-tac-toe",
   "repository": {
