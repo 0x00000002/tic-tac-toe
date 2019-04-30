@@ -26,9 +26,9 @@ const checkMove = (state = [], player = 'x') => {
   })
 }
 
-const move = (data, player = 'x', idx = 4) =>
-  produce(data, draftState => {
-    draftState.state[idx] = data.state[idx] || player
+const playerMove = (idx = 4, player = 'x', state = []) =>
+  produce(state, draftState => {
+    draftState[idx] = state[idx] || player
   })
 
 const isAvailable = i => i !== null && i !== false
@@ -37,10 +37,10 @@ const withIndices = (val, idx) => !val && idx
 const getIndicesOfFreeCells = R.compose(R.filter(isAvailable), mapIndexed(withIndices))
 const rnd = end => parseInt(Math.random() * end) % end
 
-const aiMove = (data) => {
-  const freeCells = getIndicesOfFreeCells(data.state)
+const aiMove = (state) => {
+  const freeCells = getIndicesOfFreeCells(state)
   const randomMove = rnd(freeCells.length) // quick solution :-)
-  return move(data, 'o', freeCells[randomMove])
+  return playerMove(freeCells[randomMove], 'o', state)
 }
 
-export { checkMove, move, aiMove }
+export { checkMove, playerMove, aiMove }

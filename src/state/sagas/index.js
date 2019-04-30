@@ -1,6 +1,6 @@
 import reducer from './reducers'
 
-import * as gameOperations from './operations'
+import * as gameOperations from './sagas'
 
 export { gameOperations }
 

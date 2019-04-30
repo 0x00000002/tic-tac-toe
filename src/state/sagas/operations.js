@@ -1,7 +1,7 @@
 import {
   move,
   newGame
-} from './actions'
+} from './sagas'
 
 export {
   move,

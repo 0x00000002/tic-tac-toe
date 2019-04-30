@@ -1,7 +1,6 @@
 import { checkMove, move } from './logic'
 import { describe, Try } from 'riteway'
 
-
 const x = 'x'
 const o = 'o'
 const winnerX = [x, null, null, null, x, null, null, null, x]

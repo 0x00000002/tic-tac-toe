@@ -1,11 +1,4 @@
-export const emptyState = {
-  game: {
-    data: {
-      winner: null,
-      state: Array(9).fill(null)
-    }
-  }
-}
+import emptyState from '../emptyState'
 
 export const loadState = () => {
   try {
