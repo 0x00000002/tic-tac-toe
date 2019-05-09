@@ -4,8 +4,6 @@ import './index.css'
 import { Provider as ReduxProvider } from 'react-redux'
 import App from './containers/App'
 import configureStore from './state/store'
-import errors from './helpers/errorHandling'
-import ErrorBoundary from './helpers/errorBoundary'
 import * as serviceWorker from './helpers/serviceWorker'
 import { saveState, loadState, clearState } from './state/utils/localStorage'
 
@@ -13,15 +11,13 @@ clearState()
 
 const persistedState = loadState()
 const reduxStore = configureStore(persistedState)
-
+const { dispatch } = reduxStore
 reduxStore.subscribe(() => saveState(reduxStore.getState()))
 
 ReactDOM.render(
-  <ErrorBoundary reason={errors.others}>
-    <ReduxProvider store={reduxStore}>
-      <App />
-    </ReduxProvider>
-  </ErrorBoundary>,
+  <ReduxProvider store={reduxStore}>
+    <App dispatch={dispatch} />
+  </ReduxProvider>,
   document.getElementById('app')
 )
 

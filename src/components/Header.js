@@ -1,7 +1,7 @@
 import React from 'react'
 import settings from '../settings/'
 
-const Header = (props) => {
+const Header = () => {
   document.title = settings.siteName
   return (
     <header>
