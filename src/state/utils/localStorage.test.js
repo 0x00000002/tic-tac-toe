@@ -1,27 +1,27 @@
 'use strict'
 
 import * as LS from './localStorage'
-import { emptyState } from './localStorage'
+import emptyState from '../emptyState'
 
 class LocalStorageMock {
-  constructor() {
-    this.store = {};
+  constructor () {
+    this.store = {}
   }
 
-  clear() {
-    this.store = {};
+  clear () {
+    this.store = {}
   }
 
-  getItem(key) {
-    return this.store[key] || null;
+  getItem (key) {
+    return this.store[key] || null
   }
 
-  setItem(key, value) {
-    this.store[key] = value.toString();
+  setItem (key, value) {
+    this.store[key] = value.toString()
   }
 
-  removeItem(key) {
-    delete this.store[key];
+  removeItem (key) {
+    delete this.store[key]
   }
 }
 
@@ -33,7 +33,7 @@ describe('Local storage functions', function () {
     localStorage.setItem('gameState', '')
     const loaded = LS.loadState()
     expect(loadingSpy).toHaveBeenCalledTimes(1)
-    expect(loaded).toEqual(LS.emptyState)
+    expect(loaded).toEqual(emptyState)
   })
 
   it('should load state (non empty)', () => {

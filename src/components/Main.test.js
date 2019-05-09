@@ -13,8 +13,7 @@ const props = {
         winner: 'fakeWinner'
       }
     },
-    move: 'fakeMoveFn',
-    newGame: jest.fn()
+    dispatch: jest.fn()
   }
 }
 
@@ -23,8 +22,7 @@ const empty = {
     game: {
       data: null
     },
-    move: null,
-    newGame: null
+    dispatch: null
   }
 }
 
@@ -36,8 +34,7 @@ const noWinner = {
         winner: null
       }
     },
-    move: 'fakeMoveFn',
-    newGame: jest.fn()
+    dispatch: jest.fn()
   }
 }
 
@@ -69,6 +66,6 @@ describe('components/Main', function () {
   it('should click', async function () {
     const wrapper = shallow(<Main {...noWinner} />)
     wrapper.find('button').simulate('click')
-    expect(noWinner.control.newGame.mock.calls.length).toEqual(1)
+    expect(noWinner.control.dispatch.mock.calls.length).toEqual(1)
   })
 })

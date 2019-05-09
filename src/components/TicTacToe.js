@@ -2,7 +2,8 @@ import React from 'react'
 import Loading from './Loading'
 import * as types from '../state/sagas/types'
 
-const TicTacToe = ({ data: { state, winner }, dispatch }) => {
+const TicTacToe = ({ data, dispatch }) => {
+  const { state, winner } = data || []
   const onClick = (idx) => {
     const type = winner ? types.NEW_GAME_REQUEST : types.NEW_MOVE
     dispatch({ type, payload: { idx, player: 'x' } })

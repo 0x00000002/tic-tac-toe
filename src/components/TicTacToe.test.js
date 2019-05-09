@@ -4,8 +4,11 @@ import TicTacToe from './TicTacToe'
 import Loading from './Loading'
 
 const props = {
-  state: [null, 'x', null],
-  move: jest.fn()
+  data: {
+    state: [null, 'x', null],
+    winner: null
+  },
+  dispatch: jest.fn()
 }
 
 describe('components/TicTacToe', function () {
@@ -23,6 +26,6 @@ describe('components/TicTacToe', function () {
   it('should click', async function () {
     const wrapper = shallow(<TicTacToe {...props} />)
     wrapper.find('li').at(0).simulate('click')
-    expect(props.move.mock.calls.length).toEqual(1)
+    expect(props.dispatch.mock.calls.length).toEqual(1)
   })
 })

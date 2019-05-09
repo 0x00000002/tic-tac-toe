@@ -1,4 +1,4 @@
-import { checkMove, move } from './logic'
+import { checkMove, playerMove } from './logic'
 import { describe, Try } from 'riteway'
 
 const x = 'x'
@@ -93,39 +93,39 @@ describe('checkMove()', async assert => {
   })
 })
 
-describe('move()', async assert => {
+describe('playerMove()', async assert => {
   assert({
     given: 'new move',
     should: 'return new state',
-    actual: move({ state: noWinner }, x, 0).state,
+    actual: playerMove(0, x, noWinner),
     expected: [ x, o, null, null, null, null, null, o, null ]
   })
 
   assert({
     given: 'no state',
     should: 'create new state',
-    actual: move({ state: [] }, 'x', 0).state,
+    actual: playerMove(0, x, []),
     expected: [ 'x' ]
   })
 
   assert({
     given: 'no player',
     should: 'return new state from player X',
-    actual: move({ state: noWinner }).state,
+    actual: playerMove(undefined, undefined, noWinner),
     expected: [ null, o, null, null, 'x', null, null, 'o', null ]
   })
 
   assert({
     given: 'no index',
     should: 'return new state from player O',
-    actual: move({ state: noWinner }, o).state,
+    actual: playerMove(undefined, 'o', noWinner),
     expected: [ null, o, null, null, 'o', null, null, 'o', null ]
   })
 
   assert({
-    given: 'move to existing index',
+    given: 'playerMove to existing index',
     should: 'return old state',
-    actual: move({ state: [null, o, null, null, null, null, null, o, null] }, x, 1).state,
+    actual: playerMove(1, x, [null, o, null, null, null, null, null, o, null]),
     expected: [null, o, null, null, null, null, null, o, null]
   })
 })

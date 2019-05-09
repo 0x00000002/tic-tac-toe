@@ -18,9 +18,7 @@ const winPatterns = [
 const checkMove = (state = [], player = 'x') => {
   // convert current player's state to an array similar to the `winPatterns`
   const binaryState = state.map(i => i === player ? 1 : 0)
-  // use Array.prototype.some() to avoid checking all patterns
   return winPatterns.some(pattern => {
-    // application = winPattern & (bitwise AND) binaryState
     const application = pattern.map((val, idx) => val & binaryState[idx])
     return R.equals(pattern, application)
   })
