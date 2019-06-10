@@ -1,6 +1,6 @@
 #!/bin/bash
 
-find src/* -type f -name '*.RITEway.js' -print0 |
+find src/* -type f -name '*.RW.js' -print0 |
 
 while tests= read -r -d '' file; do
     printf "\n:: $file :: \n"

@@ -1,0 +1,5 @@
+package-lock.json
+.next
+.idea
+.vscode
+node_modules/

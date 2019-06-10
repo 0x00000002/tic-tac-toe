@@ -1,4 +1,4 @@
-'use strict'
+
 
 import createReducer from './createReducer'
 

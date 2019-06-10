@@ -1,4 +1,4 @@
-'use strict'
+
 
 import * as index from './index'
 

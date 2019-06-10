@@ -1,4 +1,4 @@
-'use strict'
+
 
 import { connect } from 'react-redux'
 import App, { mapStateToProps, mapDispatchToProps } from './App'

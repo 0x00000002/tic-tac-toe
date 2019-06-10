@@ -18,7 +18,7 @@ describe('checkMove()', async assert => {
   assert({
     given: 'wrong state',
     should: 'return false',
-    actual: checkMove([0,1,2], x),
+    actual: checkMove([0, 1, 2], x),
     expected: false
   })
 

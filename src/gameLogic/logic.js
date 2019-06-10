@@ -1,11 +1,18 @@
-import * as R from 'ramda'
 import produce from 'immer/dist/immer'
+import {
+  addIndex,
+  filter,
+  compose,
+  map,
+  equals
+} from 'ramda'
 
 const winPatterns = [
   // rows
   [1, 1, 1, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 1, 1, 1, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 1, 1, 1],
+
   // cols
   [1, 0, 0, 1, 0, 0, 1, 0, 0],
   [0, 1, 0, 0, 1, 0, 0, 1, 0],
@@ -20,7 +27,7 @@ const checkMove = (state = [], player = 'x') => {
   const binaryState = state.map(i => i === player ? 1 : 0)
   return winPatterns.some(pattern => {
     const application = pattern.map((val, idx) => val & binaryState[idx])
-    return R.equals(pattern, application)
+    return equals(pattern, application)
   })
 }
 
@@ -30,9 +37,9 @@ const playerMove = (idx = 4, player = 'x', state = []) =>
   })
 
 const isAvailable = i => i !== null && i !== false
-const mapIndexed = R.addIndex(R.map)
+const mapIndexed = addIndex(map)
 const withIndices = (val, idx) => !val && idx
-const getIndicesOfFreeCells = R.compose(R.filter(isAvailable), mapIndexed(withIndices))
+const getIndicesOfFreeCells = compose(filter(isAvailable), mapIndexed(withIndices))
 const rnd = end => parseInt(Math.random() * end) % end
 
 const aiMove = (state) => {

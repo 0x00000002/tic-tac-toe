@@ -1,4 +1,4 @@
-'use strict'
+
 
 import * as LS from './localStorage'
 import emptyState from '../emptyState'
