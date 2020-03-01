@@ -6,36 +6,24 @@ import { shallow } from 'enzyme'
 import Result from './Result'
 
 const props = {
-  control: {
-    game: {
-      data: {
-        state: 'fakeState',
-        winner: 'fakeWinner'
-      }
-    },
-    dispatch: jest.fn()
-  }
+  data: {
+    state: 'fakeState',
+    winner: 'fakeWinner'
+  },
+  dispatch: jest.fn()
 }
 
 const empty = {
-  control: {
-    game: {
-      data: null
-    },
-    dispatch: null
-  }
+  data: null,
+  dispatch: null
 }
 
 const noWinner = {
-  control: {
-    game: {
-      data: {
-        state: 'fakeState',
-        winner: null
-      }
-    },
-    dispatch: jest.fn()
-  }
+  data: {
+    state: 'fakeState',
+    winner: null
+  },
+  dispatch: jest.fn()
 }
 
 describe('components/Main', function () {
@@ -53,19 +41,19 @@ describe('components/Main', function () {
   })
 
   it('should provide proper props', async function () {
-    const wrapper = shallow(<Main {...noWinner } />)
-    expect(wrapper.find(TicTacToe).prop('move')).toEqual(props.control.move)
+    const wrapper = shallow(<Main {...noWinner} />)
+    expect(wrapper.find(TicTacToe).prop('move')).toEqual(props.move)
   })
 
   it('should replace "Move()" functions with "NewGame()"', async function () {
     const wrapper = shallow(<Main {...props} />)
-    expect(wrapper.find(Result).prop('winner')).toEqual(props.control.game.data.winner)
-    expect(wrapper.find(TicTacToe).prop('move')).toEqual(props.control.newGame)
+    expect(wrapper.find(Result).prop('winner')).toEqual(props.data.winner)
+    expect(wrapper.find(TicTacToe).prop('move')).toEqual(props.newGame)
   })
 
   it('should click', async function () {
     const wrapper = shallow(<Main {...noWinner} />)
     wrapper.find('button').simulate('click')
-    expect(noWinner.control.dispatch.mock.calls.length).toEqual(1)
+    expect(noWinner.dispatch.mock.calls.length).toEqual(1)
   })
 })

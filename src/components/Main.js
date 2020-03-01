@@ -4,13 +4,8 @@ import TicTacToe from './TicTacToe'
 import Result from './Result'
 import * as types from '../state/sagas/types'
 
-const Main = ({ control }) => {
-  const {
-    game: { data },
-    dispatch
-  } = control
-
-  return data ? (
+const Main = ({ data, dispatch }) =>
+  data ? (
     <section id='game' className={data.winner}>
       <TicTacToe data={data} dispatch={dispatch} />
       <button
@@ -24,6 +19,5 @@ const Main = ({ control }) => {
   ) : (
     <Loading />
   )
-}
 
 export default Main
