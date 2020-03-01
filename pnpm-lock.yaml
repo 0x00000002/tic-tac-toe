@@ -18,6 +18,7 @@ devDependencies:
   '@babel/preset-env': 7.8.6_@babel+core@7.8.6
   '@babel/preset-react': 7.8.3_@babel+core@7.8.6
   '@babel/register': 7.8.6_@babel+core@7.8.6
+  babel-loader: 8.0.6_@babel+core@7.8.6
   enzyme: 3.11.0
   enzyme-adapter-react-16: 1.15.2_5021c1ae276c9f382041a18220a366e7
   eslint: 6.8.0
@@ -3038,6 +3039,21 @@ packages:
       webpack: '>=2'
     resolution:
       integrity: sha512-4BmWKtBOBm13uoUwd08UwjZlaw3O9GWf456R9j+5YykFZ6LUIjIKLc0zEZf+hauxPOJs96C8k6FvYD09vWzhYw==
+  /babel-loader/8.0.6_@babel+core@7.8.6:
+    dependencies:
+      '@babel/core': 7.8.6
+      find-cache-dir: 2.1.0
+      loader-utils: 1.4.0
+      mkdirp: 0.5.1
+      pify: 4.0.1
+    dev: true
+    engines:
+      node: '>= 6.9'
+    peerDependencies:
+      '@babel/core': ^7.0.0
+      webpack: '>=2'
+    resolution:
+      integrity: sha512-4BmWKtBOBm13uoUwd08UwjZlaw3O9GWf456R9j+5YykFZ6LUIjIKLc0zEZf+hauxPOJs96C8k6FvYD09vWzhYw==
   /babel-plugin-dynamic-import-node/2.3.0:
     dependencies:
       object.assign: 4.1.0
@@ -3190,7 +3206,6 @@ packages:
     resolution:
       integrity: sha1-pDAdOJtqQ/m2f/PKEaP2Y342Dp4=
   /big.js/5.2.2:
-    dev: false
     resolution:
       integrity: sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==
   /binary-extensions/1.13.1:
@@ -4727,7 +4742,6 @@ packages:
     resolution:
       integrity: sha1-TapNnbAPmBmIDHn6RXrlsJof04k=
   /emojis-list/3.0.0:
-    dev: false
     engines:
       node: '>= 4'
     resolution:
@@ -7857,7 +7871,6 @@ packages:
   /json5/1.0.1:
     dependencies:
       minimist: 1.2.0
-    dev: false
     hasBin: true
     resolution:
       integrity: sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==
@@ -8189,7 +8202,6 @@ packages:
       big.js: 5.2.2
       emojis-list: 3.0.0
       json5: 1.0.1
-    dev: false
     engines:
       node: '>=4.0.0'
     resolution:
@@ -13244,6 +13256,7 @@ specifiers:
   '@babel/register': latest
   '@material-ui/core': latest
   '@material-ui/icons': latest
+  babel-loader: latest
   enzyme: latest
   enzyme-adapter-react-16: latest
   eslint: latest

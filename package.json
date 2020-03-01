@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@babel/cli": "latest",
+    "babel-loader": "latest",
     "@babel/core": "latest",
     "@babel/preset-env": "latest",
     "@babel/preset-react": "latest",
