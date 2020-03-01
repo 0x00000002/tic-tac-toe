@@ -82,7 +82,10 @@
     "parser": "babel-eslint"
   },
   "lint-staged": {
-    "src/**/**.js": "git add"
+    "src/**/**.js": [
+      "eslint",
+      "prettier --write"
+    ]
   },
   "husky": {
     "hooks": {
