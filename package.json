@@ -82,11 +82,7 @@
     "parser": "babel-eslint"
   },
   "lint-staged": {
-    "linters": {
-      "src/**/**.js": [
-        "git add"
-      ]
-    }
+    "src/**/**.js": "git add"
   },
   "husky": {
     "hooks": {
